@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href=""></link>
+    <link rel="stylesheet" href="style.css"></link>
     
     <title>VueJS</title>
     <script src="vue.js"></script>
@@ -11,25 +11,24 @@
 
 <body>
     <div id="app">
-     <button @click="changeLink">Click to change Link</button>
-     <a :href="link">Link</a>
+     <div 
+     class="demo "
+     @click=" attachRed = !attachRed"
+     :class="{red:attachRed}"></div>
+     <div class="demo "
+     @click=" attachRed = !attachRed"
+     :class="{red:attachRed}"
+     ></div>
+     <div class="demo"></div>
+     
     </div>
     <script>
         new Vue({
            el: '#app',
-            data:{
-                link: 'http://google.com'
-
-            },
-            methods: {
-                changeLink: function() {
-                    this.Link = 'http://apple.com'
-                    
-                }
-            }
-            
-
-        });
+           data: {
+               attachRed: false
+           }
+            });
 
     </script>
 </body>
